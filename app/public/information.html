@@ -70,7 +70,10 @@
                 <dd class="col-sm-9">{{person.dob.age}}</dd>
 
                 <dt class="col-sm-3">Email Address:</dt>
-                <dd class="col-sm-9"><a style="color:red;" href = "mailto: wade.duncan@gmail.com">{{person.email}}</a></dd>
+                <dd class="col-sm-9"><a style="color:red;" v-bind:href = "'mailto:' +person.email">{{person.email}}</a></dd>
+                <form v-on:submit.prevent="fetchUserData">
+                  <button type="submit">Refresh</button>
+                </form>
               </dl>
             </div>
         </div>
